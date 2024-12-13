@@ -1,0 +1,39 @@
+.albrecht-crossellingnotabs {
+    margin-top: 100px;
+
+    h2,
+    h3 {
+        text-align: center;
+    }
+
+    .product-slider-container {
+        width: 100%;
+    }
+
+    .cms-element-product-slider {
+        margin-top: 20px;
+        margin-bottom: 100px;
+
+        .product-slider.has-nav {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .product-slider-controls-prev {
+            left: 0;
+        }
+
+        .product-slider-controls-next {
+            right: 0;
+        }
+
+        .product-name {
+            text-align: center;
+        }
+
+        .product-image {
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+}

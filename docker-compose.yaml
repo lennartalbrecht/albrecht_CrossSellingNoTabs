@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  shopware:
+    image: dockware/dev:latest
+    container_name: albrecht_CrossSellingNoTabs
+    ports:
+      - "22:22"    
+      - "80:80"    
+      - "443:443"  
+      - "8888:8888"
+      - "9998:9998"
+      - "9999:9999"
+      - "3306:3306"
+    volumes:
+      - "./albrecht_CrossSellingNoTabs:/var/www/html/custom/plugins/albrecht_CrossSellingNoTabs"
+    networks:
+      - web
+    environment:
+      - XDEBUG_ENABLED=1
+networks:
+  web:
+    external: false

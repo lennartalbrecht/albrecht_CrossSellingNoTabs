@@ -1,0 +1,35 @@
+{
+    "name": "albrecht_crosssellingnotabs/albrecht_crosssellingnotabs",
+    "description": "albrecht_CrossSellingNoTabs",
+    "type": "shopware-platform-plugin",
+    "license": "proprietary",
+    "version": "1.0.0",
+    "extra": {
+        "shopware-plugin-class": "albrecht_CrossSellingNoTabs\\albrecht_CrossSellingNoTabs",
+        "authors": [
+            {
+                "name": "Lennart Albrecht"
+            }
+        ],
+        "label": {
+            "de-DE": "Cross Selling ohne Tabs",
+            "en-GB": "Cross selling without tabs"
+        },
+        "description": {
+            "de-DE": "Tabs gehören in die Spülmaschine",
+            "en-GB": "Joke doesn't make sense in English, but in case you wanted to laugh and know German: 'Tabs gehören in die Spülmaschine'"
+        },
+        "manufacturerLink": {
+            "de-DE": "https://github.com/lennartalbrecht",
+            "en-GB": "https://github.com/lennartalbrecht"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "albrecht_CrossSellingNoTabs\\": "src/"
+        }
+    },
+    "require": {
+        "shopware/core": ">= 6.4.0 < 6.7.0"
+    }
+}
