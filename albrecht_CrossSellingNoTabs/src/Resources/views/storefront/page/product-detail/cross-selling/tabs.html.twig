@@ -1,15 +1,17 @@
 {% sw_extends '@Storefront/storefront/page/product-detail/cross-selling/tabs.html.twig' %}
 
 {% block page_product_detail_cross_selling_tabs_inner %}
-{% if crossSellings|filter(item => item.total > 0 and item.crossSelling.active == true) %}
-    <div class="custom-cross-selling">
-        <h2>{{ "detail.customCrossSellingHeadline"|trans|sw_sanitize }}</h2>
-        {% for item in crossSellings|filter(item => item.total > 0 and item.crossSelling.active == true)  %}
+	{% if crossSellings|filter(item => item.total > 0 and item.crossSelling.active == true) %}
+		<div class="albrecht-crossellingnotabs">
+			<h2>{{ "albrechtcrossellingnotabs.headline"|trans|sw_sanitize }}</h2>
+			{% for item in element.data.crossSellings.elements|filter(item => item.total > 0 and item.crossSelling.active == true) %}
+				{% set crossSelling = item.crossSelling %}
+				{% set products = item.products %}
+				{% set id = crossSelling.id %}
 
-        {% set id = item.crossSelling.id %}
-            <h3>{{ item.crossSelling.translated.name }}</h3>
+				<h3>{{ crossSelling.translated.name }}</h3>
 
-            {% set config = {
+				{% set config = {
                 'border': {
                     'value': false
                 },
@@ -36,7 +38,7 @@
                 },
             } %}
 
-            {% sw_include "@Storefront/storefront/element/cms-element-product-slider.html.twig" with {
+				{% sw_include "@Storefront/storefront/element/cms-element-product-slider.html.twig" with {
                 sliderConfig: config,
                     element: {
                     'data': {
@@ -48,7 +50,7 @@
                     }
             } %}
 
-        {% endfor %}
-    </div>
-{% endif %}
+			{% endfor %}
+		</div>
+	{% endif %}
 {% endblock %}
